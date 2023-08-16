@@ -1,0 +1,2 @@
+# hse-practices
+для практик
