@@ -98,7 +98,7 @@ __ВАЖНО__: прочитайте гайд полностью перед те
 
 Шаблон команды выглядит таким образом:
 
-`g++-12|clang++-15 path/to/source.cpp -std=c++98|c++11|c++14|c++17|c++20 -Wall -Wextra -Werror -o path/to/output_executable `
+`g++-12|clang++-15 path/to/source.cpp -std=c++17 -Wall -Wextra -Werror -o path/to/output_executable `
 
 Расшифровка:
 
