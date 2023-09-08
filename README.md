@@ -161,7 +161,6 @@ cppcheck --language=c++ -DSOME_DEFINE_TO_FIX_CONFIG --enable=all --error-exitcod
 ### Компиляция и тесты
 Как правило, к лабораторной работе прилагается набор открытых тестов. Для их прохождения сначала необходимо скомпилировать программу.
 
-### Компиляция
 Компиляция - преобразование всех *.cpp файлов в один исполняемый бинарный .exe файл 
 
 Перед прочтением этой главы у вас должны быть установлены хотя бы два компилятора.
@@ -173,13 +172,11 @@ cppcheck --language=c++ -DSOME_DEFINE_TO_FIX_CONFIG --enable=all --error-exitcod
 * `clang++ -v` или `clang++-15 -v` - чтобы проверить clang++
   *если версии без суффикса одинаковые, можно его не приписывать*
 
-#### Компиляция из консоли
-
 Шаблон команды выглядит таким образом:
 
 `g++-12|clang++-15 path/to/source.cpp -std=c++17 -Wall -Wextra -Werror -o path/to/output_executable `
 
-Расшифровка:
+*Расшифровка:*
 
 `g++-12|clang++-15` -- выбираем одним из двух компиляторов
 
@@ -219,24 +216,38 @@ cppcheck --language=c++ -DSOME_DEFINE_TO_FIX_CONFIG --enable=all --error-exitcod
 ### Открываем ваш репозиторий на github и меняем ветку с main на ветку соответствующей лабы (например, lab00-demo) (очень важный момент). 
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/2cd380b4-13ac-4708-9d6a-2843814459dd)
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/ddef8f22-f375-4795-affd-a9980b887c23)
+
 __Убедитесь, что__ находитесь в ветке lab00-demo, сверху слева написано название ветки в которой вы находитесь. После этого, заходим в lab00-demo/solution/tests.txt и оставляем только те подзадачи, которые уже выполнили. 
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/0fa52ae7-5f83-49db-81aa-8582ca88895e)
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/9e84ff9f-4ac9-4321-b6a4-f81b076271a8)
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/42fd05dc-7321-4b74-9d66-0a02384d825a)
+
+Теперь можем изменить файл `overview.cpp`. Ещё раз __внимательно смотрим__, что находимся в __нужной__ ветке (сейчас для нас это -- `lab00-demo`)
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/e298dc6b-bb4b-4447-8df2-0306dbf8252b)
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/df9fc353-b353-4b68-8672-34689062369a)
-Смотрим в какой ветке мы находимся, должны быть в lab00-demo. После вставки своего кода, жмем commit changes.
+
+__Смотрим в какой ветке мы находимся__, должны быть в lab00-demo. После вставки своего кода, жмем commit changes.
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/b56052a1-eeaa-46c8-ade7-22cc969db427)
+
 После этого, должно появиться окно в главном окне вашего репозитория,  которое предлагает создать pull request. Жмем на Compare & pull request.
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/ea355ba7-5cd1-488f-94b6-ff52b2774d46)
+
 Меняем название pull request на ваше имя и вашу лабораторную работу. Вводите имя и название лабораторной аккуратно, пробелы важны. После этого жмем на кнопку Create pull request.
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/3bf618f7-3a3e-471f-82d6-f02a8338bd04)
+
 После этого появится окно. Здесь оно показывает, что некоторые тесты не были пройдены.
 ![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/5282f9cc-ead3-4d07-8c51-b047b27013fb)
-Заходим в Pull Requests и видим там свой Pull Request, заходим туда и смотрим какие тесты пройдены.
-![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/56d3caa6-1742-49b2-bf68-5368468b566d)
-Если горит зеленая галочка - то все ок, мы сдали подзадачу лабораторной работы.
 
+Заходим в Pull Requests и видим там свой Pull Request, заходим туда и смотрим какие тесты пройдены. Исправляем, изменяем файлы ещё раз.
+![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/56d3caa6-1742-49b2-bf68-5368468b566d)
+
+Если горит зеленая галочка - то все ок, мы сдали подзадачу лабораторной работы.
+Вас может привлечь огромная зелёная кнопка `Squash and merge` -- её __нельзя__ нажимать. Оставьте всё, как есть.
+![image](https://github.com/cowboymalboro1884/hse-practices/assets/112244451/5ee72c9e-597e-4e46-b435-aa7ff8b3bede)
+
+## Советы
+* если в чем-то не уверены -- пишите практику\флудилку. Вам __очень__ хотят помочь и __очень__ не хотят возиться с возможными последствиями Ваших ошибок, так что дешевле -- переспросить.
+* каждый раз смотрите, в какой ветке вы находитесь -- в __main коммитить нельзя__.
 
 ## Материалы
 * о том, что такое git можно почитать [тут](https://docs.github.com/ru/get-started/using-git/about-git) (официальная дока) и [тут](https://habr.com/ru/articles/588801/) (статья на хабре)
