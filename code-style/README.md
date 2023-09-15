@@ -16,6 +16,7 @@
 1. Имена классов и структур пишутся в `CamelCase`.
 2. Имена функций и методов пишутся в `snake_case`.
 3. Имена переменных пишутся в `snake_case`.
+4. Имена полей класса начинаюся с `m_`. *(под вопросом)*
 
 ## Пример:
 // TODO : clang-format
@@ -42,7 +43,7 @@ struct KryakvaTelegramBot {
     m_current_user = std::move(new_user);
   }
 
-  const std::vector<TelegramStickers>& get_available_stickers() {
+  const std::vector<TelegramSticker>& get_available_stickers() {
     return m_available_stickers;
   }
 
@@ -52,6 +53,6 @@ struct KryakvaTelegramBot {
 
 private:
   std::string m_current_user;
-  std::vector<TelegramStickers> m_available_stickers;
+  std::vector<TelegramSticker> m_available_stickers;
 }
 ```
