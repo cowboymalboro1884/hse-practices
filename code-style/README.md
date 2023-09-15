@@ -28,11 +28,11 @@ struct KryakvaTelegramBot {
   KryakvaTelegramBot(const std::string& user_name, const std::vector<TelegramSticker>& available_stickers) : m_current_user(std::move(user_name)), m_available_stickers(std::move(available_stickers)) {};
 
   void say_yappy() {
-    std::cout << "тяв-тяв\n" << *m_available_stickers.find("Генерал Горо");
+    std::cout << "тяв-тяв\n" << *m_available_stickers.find("Генерал Горо") << std::endl;
   }
 
   void say_meow() {
-    std::cout << "миу-миу\n" << *m_available_stickers.find("Котик");
+    std::cout << "миу-миу\n" << *m_available_stickers.find("Котик") << std::endl;
   }
 
   const std::string& get_user() {
