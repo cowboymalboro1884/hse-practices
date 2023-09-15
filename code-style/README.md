@@ -18,21 +18,40 @@
 3. Имена переменных пишутся в `snake_case`.
 
 ## Пример:
+// TODO : clang-format
 ```c++
 struct KryakvaTelegramBot {
 
-  void yappy() {
-    std::cout << "тяв-тяв\n";
+  KryakvaTelegramBot() = default;
+  KryakvaTelegramBot(const std::string& user_name) : m_current_user(std::move(user_name)), available_stickers() {};
+  KryakvaTelegramBot(const std::string& user_name, const std::vector<TelegramSticker>& available_stickers) : m_current_user(std::move(user_name)), m_available_stickers(std::move(available_stickers)) {};
+
+  void say_yappy() {
+    std::cout << "тяв-тяв\n" << *m_available_stickers.find("Генерал Горо");
   }
 
-  void meow() {
-    std::cout << "миу-миу\n";
+  void say_meow() {
+    std::cout << "миу-миу\n" << *m_available_stickers.find("Котик");
   }
 
-  std::string get_user() {
+  const std::string& get_user() {
     return m_current_user;
   }
+
+  void set_new_user(const std::string& new_user) {
+    m_current_user = std::move(new_user);
+  }
+
+  const std::vector<TelegramStickers>& get_available_stickers() {
+    return m_available_stickers;
+  }
+
+  void add_new_sticker(const TelegramSticker& new_sticker) {
+    m_available_stickers.push_back(std::move(new_sticker));
+  }
+
 private:
-  std::string m_current_user;  
+  std::string m_current_user;
+  std::vector<TelegramStickers> m_available_stickers;
 }
 ```
