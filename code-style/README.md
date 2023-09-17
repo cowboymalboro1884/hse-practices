@@ -55,7 +55,7 @@ struct KryakvaTelegramBot {
   }
 
 private:
-  std::string m_current_user;
-  std::vector<TelegramSticker> m_available_stickers;
+  std::string current_user;
+  std::vector<TelegramSticker> available_stickers;
 }
 ```
