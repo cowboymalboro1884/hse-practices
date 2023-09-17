@@ -18,44 +18,24 @@
 Соответствует форматированию из открытого `clang-format`-конфига -- [вот он](https://github.com/hse-spb-2023-cpp/all-labs/blob/main/.clang-format).
 ## Cases
 1. Имена классов и структур пишутся в `CamelCase`.
-2. Имена функций и методов пишутся в `snake_case`.
-3. Имена переменных пишутся в `snake_case`.
-
-## Пример:
-// TODO : clang-format
 ```c++
-struct KryakvaTelegramBot {
-
-  KryakvaTelegramBot() = default;
-  KryakvaTelegramBot(const std::string& user_name) : m_current_user(std::move(user_name)), available_stickers() {};
-  KryakvaTelegramBot(const std::string& user_name, const std::vector<TelegramSticker>& available_stickers) : m_current_user(std::move(user_name)), m_available_stickers(std::move(available_stickers)) {};
-
-  void say_yappy() {
-    std::cout << "тяв-тяв\n" << *m_available_stickers.find("Генерал Горо") << std::endl;
-  }
-
-  void say_meow() {
-    std::cout << "миу-миу\n" << *m_available_stickers.find("Котик") << std::endl;
-  }
-
-  const std::string& get_user() {
-    return m_current_user;
-  }
-
-  void set_new_user(const std::string& new_user) {
-    m_current_user = std::move(new_user);
-  }
-
-  const std::vector<TelegramSticker>& get_available_stickers() {
-    return m_available_stickers;
-  }
-
-  void add_new_sticker(const TelegramSticker& new_sticker) {
-    m_available_stickers.push_back(std::move(new_sticker));
-  }
-
-private:
-  std::string current_user;
-  std::vector<TelegramSticker> available_stickers;
+struct GoodStruct {
+    int field1;
+    char* field2;
 }
+```
+3. Имена функций и методов пишутся в `snake_case`.
+```c++
+void print_vector_int(const std::vector<int>& vector_to_print) {
+    for(int elem : vector_to_print) {
+        std::cout << elem << ' ';
+    }
+    std::cout << std::endl;
+}
+```
+5. Имена переменных пишутся в `snake_case`.
+```c++
+int ref_counter;
+std::string new_username;
+bool is_door_open;
 ```
